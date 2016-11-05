@@ -3,6 +3,9 @@ package marmu.com.gpstracking;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.AsyncTask;
+import android.os.BatteryManager;
 import android.util.Log;
 
 import org.ksoap2.SoapEnvelope;
@@ -11,26 +14,25 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-/**
- * Created by azharuddin on 4/11/16.
- */
-
 public class CoordinatesReceiver extends BroadcastReceiver {
 
     private String TAG = "Response";
-
+    private Context ctx;
     private String imei, latitude, longitude;
+
     private int batteryPercentage;
 
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        ctx = context;
         imei = intent.getExtras().get("IMEI").toString();
         latitude = intent.getExtras().get("Latitude").toString();
         longitude = intent.getExtras().get("Longitude").toString();
-        batteryPercentage = (int) new MainActivity().batteryLevel();
+        batteryPercentage = (int) batteryLevel();
+        //batteryPercentage = (int) getBatteryPercentage();
 
-        AsyncCallWS task = new AsyncCallWS();
+        AsyncCallWS task = new AsyncCallWS(imei,latitude,longitude,batteryPercentage);
         task.execute();
 
         Log.i("Longitude", longitude);
@@ -40,22 +42,27 @@ public class CoordinatesReceiver extends BroadcastReceiver {
     }
 
 
+    //battery level
+    public float batteryLevel() {
+        Intent batteryIntent = ctx.getApplicationContext().registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+        int level = batteryIntent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        int scale = batteryIntent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+
+        if (level == -1 || scale == -1) {
+            return 50.0f;
+        }
+
+        return ((float) level / (float) scale) * 100.0f;
+    }
+
     //SOAP method
-    public void calculate() {
+    public void calculate(String imei,String latitude,String longitude,int batteryPercentage) {
         String SOAP_ACTION = "http://tempuri.org/SetEnableTracking";
         String METHOD_NAME = "SetEnableTracking";
         String NAMESPACE = "http://tempuri.org/";
         String URL = "http://198.12.153.30/SETrackMobility/SETrack.asmx";
         try {
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
-
-            /*PropertyInfo pi = new PropertyInfo();
-            pi.name = "IMEANo";
-            pi.type = PropertyInfo.STRING_CLASS;
-            Request.addProperty(pi, imei);
-
-            pi.name = "Latitude";
-            pi.type = PropertyInfo.STRING_CLASS;*/
 
             Request.addProperty("IMEANo", imei);
             Request.addProperty("Latitude", Double.parseDouble(latitude));
@@ -75,15 +82,45 @@ public class CoordinatesReceiver extends BroadcastReceiver {
 
             transport.call(SOAP_ACTION, soapEnvelope);
             SoapPrimitive resultString = (SoapPrimitive) soapEnvelope.getResponse();
-            /*runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                }
-            });*/
+            //Log.e(TAG, resultString);
         } catch (Exception ex) {
             Log.e(TAG, "Error: " + ex.getMessage());
         }
 
     }
 
+    public class AsyncCallWS extends AsyncTask<Void, Void, Void> {
+        private String TAG = "Response";
+
+        private String imei, latitude, longitude;
+
+        private int batteryPercentage;
+
+
+        public AsyncCallWS(String imei,String latitude,String longitude,int batteryPercentage) {
+            this.imei=imei;
+            this.latitude=latitude;
+            this.longitude=longitude;
+            this.batteryPercentage=batteryPercentage;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            Log.i(TAG, "onPreExecute");
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            Log.i(TAG, "doInBackground");
+            new CoordinatesReceiver().calculate(imei,latitude,longitude,batteryPercentage);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            Log.i(TAG, "onPostExecute");
+        }
+
+
+    }
 }

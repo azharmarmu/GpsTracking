@@ -31,7 +31,8 @@ public class GPS_Service extends Service {
             @Override
             public void onLocationChanged(Location location) {
                 TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-                Intent i = new Intent("location_update");
+                Intent i = new Intent("marmu.com.gpstracking.receiver");
+                //Intent i = new Intent("location_update");
                 i.putExtra("IMEI", tm.getDeviceId());
                 i.putExtra("Latitude", location.getLatitude());
                 i.putExtra("Longitude", location.getLongitude());

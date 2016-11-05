@@ -25,7 +25,7 @@
         <service android:name=".GPS_Service" />
         <receiver android:name=".CoordinatesReceiver">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="marmu.com.gpstracking.receiver" />
             </intent-filter>
         </receiver>
     </application>
