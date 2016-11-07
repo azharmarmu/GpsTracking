@@ -2,148 +2,166 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/libs/ksoap2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0f550320c35a2f2cdcd7a0d56eea37a86779131b">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/ksoap2_73486349f2b6553a7ea73e567cbc03908bda1b66.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_82e97906ef760052b6ff73a08230a2094abb2ad8.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="false"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_106cbf3f9a9a84c675db20e263a41bd295627d57.jar" />
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_106cbf3f9a9a84c675db20e263a41bd295627d57/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/libs/ksoap2.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_d87c87c4bf721f9a371a9d9c03043ecad50474c4.jar" />
+        sha1="0f550320c35a2f2cdcd7a0d56eea37a86779131b">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/2/ksoap2_73486349f2b6553a7ea73e567cbc03908bda1b66/classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_82e97906ef760052b6ff73a08230a2094abb2ad8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_1de148565cb9e2ffeb819fb64146f96955cdb6be.jar" />
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_1de148565cb9e2ffeb819fb64146f96955cdb6be/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_adbee9a7cb29f80132897e3fa1666e38c7f3421d.jar" />
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_d87c87c4bf721f9a371a9d9c03043ecad50474c4/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_652395f6cdd2eba48396305ee809e72f8cdbfe1f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/azharuddin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_9c85f3ec19a647e845e4a5fb0beb040ad28fab9b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_224e0cf3b0a0978882e875abc0dc76c7ed568310.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_baec633aa9a3c04db5e6f240effe2150b8c115f2.jar" />
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_baec633aa9a3c04db5e6f240effe2150b8c115f2/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_ef5674d3e47e405c1be960ece3389dc5eb9fee9e.jar" />
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_adbee9a7cb29f80132897e3fa1666e38c7f3421d/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/azharuddin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_159c410baca12162a034c5d5edc1c2b76363cc16.jar" />
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_9c85f3ec19a647e845e4a5fb0beb040ad28fab9b/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_af8ad4c5be2efbbbc60e969f1c5cfac47282dcc1.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_3f2a97a93657d3d82cb2abac42c8174384f7f114.jar" />
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_3f2a97a93657d3d82cb2abac42c8174384f7f114/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_faf7ffab431911af9d3763b0b31ed5edf0367a0a.jar" />
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_ef5674d3e47e405c1be960ece3389dc5eb9fee9e/classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_af8ad4c5be2efbbbc60e969f1c5cfac47282dcc1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="false"
+        jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_3e657433b220034a57ccee22002d97676f7636e9.jar" />
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_3e657433b220034a57ccee22002d97676f7636e9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="dc1b21a7e8759ff8bd24613f980ded82950ed123">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_da0cb053bf6172990fd691c3d6fc02cb84c0b3f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_faf7ffab431911af9d3763b0b31ed5edf0367a0a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_224e0cf3b0a0978882e875abc0dc76c7ed568310/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_652395f6cdd2eba48396305ee809e72f8cdbfe1f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_159c410baca12162a034c5d5edc1c2b76363cc16/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="a0f5a1c5def7fe93ceca7478b98c464b2f814f03">
+        <dex dex="/home/azharuddin/Documents/Projects/FishMarketApp/GpsGit/GpsTracking/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d4b4af2fe3e2316719a129a0a1921ca869da9610/classes.dex" />
     </item>
 
 </items>

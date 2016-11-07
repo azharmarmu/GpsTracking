@@ -14,6 +14,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import java.util.Date;
+
 public class CoordinatesReceiver extends BroadcastReceiver {
 
     private String TAG = "Response";
@@ -80,9 +82,10 @@ public class CoordinatesReceiver extends BroadcastReceiver {
 
             HttpTransportSE transport = new HttpTransportSE(URL);
 
+            Log.e("Request: ","Requesting time "+new Date());
             transport.call(SOAP_ACTION, soapEnvelope);
             SoapPrimitive resultString = (SoapPrimitive) soapEnvelope.getResponse();
-            //Log.e(TAG, resultString);
+            Log.e(TAG, "Success: "+ String.valueOf(resultString));
         } catch (Exception ex) {
             Log.e(TAG, "Error: " + ex.getMessage());
         }
@@ -106,19 +109,23 @@ public class CoordinatesReceiver extends BroadcastReceiver {
 
         @Override
         protected void onPreExecute() {
-            Log.i(TAG, "onPreExecute");
+            //Log.i(TAG, "onPreExecute");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.i(TAG, "doInBackground");
+            Log.i("IMENO", imei);
+            Log.i("Longitude", longitude);
+            Log.i("Latitude", latitude);
+            Log.i("BatteryPercentage", String.valueOf(batteryPercentage));
+
             new CoordinatesReceiver().calculate(imei,latitude,longitude,batteryPercentage);
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result) {
-            Log.i(TAG, "onPostExecute");
+            //Log.i(TAG, "onPostExecute");
         }
 
 
