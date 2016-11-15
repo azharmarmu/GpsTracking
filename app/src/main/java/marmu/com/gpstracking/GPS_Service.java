@@ -9,16 +9,20 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
 import android.telephony.TelephonyManager;
 
 public class GPS_Service extends Service {
 
+    WakeLock wakeLock;
     private LocationListener locationListener;
     private LocationManager locationManager;
 
-    @Nullable
+    public GPS_Service() {
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -26,7 +30,16 @@ public class GPS_Service extends Service {
 
     @Override
     public void onCreate() {
+        super.onCreate();
+
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+
+        wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "DoNotSleep");
+
+        wakeLock.acquire();
+
         locationListener = new LocationListener() {
+
             @SuppressLint("HardwareIds")
             @Override
             public void onLocationChanged(Location location) {
@@ -69,6 +82,7 @@ public class GPS_Service extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        wakeLock.release();
         if (locationManager != null) {
             //noinspection MissingPermission
             locationManager.removeUpdates(locationListener);

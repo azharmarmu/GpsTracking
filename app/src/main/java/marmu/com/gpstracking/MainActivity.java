@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void enable_gps() {
-        Toast.makeText(MainActivity.this, "Services is started", Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, "Services is started", Toast.LENGTH_LONG).show();
+        Log.e("Service Status", "Services is started");
         Intent gpsService = new Intent(MainActivity.this, GPS_Service.class);
         startService(gpsService);
     }
