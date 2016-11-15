@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 
 public class Common {
 
+    public static int count = 0;
+
     public static void saveUserData(String key, String data, Context context) {
         //Attempt to invoke virtual method 'android.content.SharedPreferences
         // android.content.Context.getSharedPreferences(java.lang.String, int)' on a null object reference

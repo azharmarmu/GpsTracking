@@ -4,15 +4,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.BatteryManager;
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapPrimitive;
@@ -32,9 +28,7 @@ public class CoordinatesReceiver extends BroadcastReceiver {
     private Context ctx;
     private String imei, latitude, longitude;
     private int batteryPercentage;
-    private JSONArray mPoints = new JSONArray();
 
-    private static int count = 0;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -45,27 +39,26 @@ public class CoordinatesReceiver extends BroadcastReceiver {
         batteryPercentage = (int) batteryLevel();
         //batteryPercentage = (int) getBatteryPercentage();
 
+        DatabaseManager databaseManager = new DatabaseManager(ctx);
 
-        String mValue = Common.getUserData("mValue", ctx);
-        if (!mValue.equals("")) {
-            try {
-                JSONArray array = new JSONArray(mValue);
-                for (int i = 0; i < array.length(); i++) {
-                    JSONObject object = array.getJSONObject(i);
+        //Read LocalDB
+        Cursor cursor = databaseManager.getAllCoordinates();
+        try {
+            for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
 
-                    AsyncCallWS task = new AsyncCallWS(object.getString("imei"),
-                            object.getString("latitude"),
-                            object.getString("longitude"),
-                            Integer.parseInt(object.getString("batteryPercentage")),
-                            ctx,
-                            i);
-                    task.execute();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
+                AsyncCallWS task = new AsyncCallWS(cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        Integer.parseInt(cursor.getString(4)),
+                        ctx,
+                        Integer.parseInt(cursor.getString(0)));
+                task.execute();
             }
+        } finally {
+            cursor.close();
         }
-        AsyncCallWS task = new AsyncCallWS(imei, latitude, longitude, batteryPercentage, ctx,-1);
+
+        AsyncCallWS task = new AsyncCallWS(imei, latitude, longitude, batteryPercentage, ctx, -1);
         task.execute();
     }
 
@@ -85,7 +78,8 @@ public class CoordinatesReceiver extends BroadcastReceiver {
     }
 
     //SOAP method
-    public void calculate(String imei, String latitude, String longitude, int batteryPercentage, Context mctx) {
+    public void calculate(String imei, String latitude, String longitude,
+                          int batteryPercentage, Context mctx) {
         try {
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
 
@@ -116,25 +110,15 @@ public class CoordinatesReceiver extends BroadcastReceiver {
 
         } catch (Exception ex) {
             Log.e(TAG, "Error: " + ex.getMessage());
-
-            JSONObject object = new JSONObject();
-            try {
-                object.put("imei", imei);
-                object.put("latitude", latitude);
-                object.put("longitude", longitude);
-                object.put("batteryPercentage", String.valueOf(batteryPercentage));
-                mPoints.put(CoordinatesReceiver.count, object);
-                CoordinatesReceiver.count++;
-                Common.saveUserData("mValue", mPoints.toString(), mctx);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            DatabaseManager databaseManager = new DatabaseManager(mctx);
+            databaseManager.addCoordinates(imei, latitude, longitude, String.valueOf(batteryPercentage));
         }
 
     }
 
     //RecallSOAP method
-    public void calculate(String imei, String latitude, String longitude, int batteryPercentage, Context mctx, int count) {
+    public void calculate(String imei, String latitude, String longitude,
+                          int batteryPercentage, Context mctx, int count) {
         try {
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
 
@@ -153,7 +137,7 @@ public class CoordinatesReceiver extends BroadcastReceiver {
 
             HttpTransportSE transport = new HttpTransportSE(URL);
 
-            Log.e("Request: ", "Requesting time " + new Date());
+            Log.e("Recall Request ", "Requesting time " + new Date());
             Log.i("IMENO", imei);
             Log.i("Longitude", longitude);
             Log.i("Latitude", latitude);
@@ -164,14 +148,13 @@ public class CoordinatesReceiver extends BroadcastReceiver {
             Log.e(TAG, "Success: " + String.valueOf(resultString));
 
             //Remove from Local
-            mPoints.remove(count);
-            if(mPoints.length()<=0){
-
-                Common.saveUserData("mValue", "", mctx);
-            }
+            DatabaseManager databaseManager = new DatabaseManager(mctx);
+            databaseManager.deleteContact(count);
 
         } catch (Exception ex) {
-            Log.e(TAG, "Error: " + ex.getMessage());
+            Log.e(TAG, "Recall Error: " + ex.getMessage());
+            DatabaseManager databaseManager = new DatabaseManager(mctx);
+            databaseManager.updateContact(count, imei, latitude, longitude, String.valueOf(batteryPercentage));
         }
 
     }
